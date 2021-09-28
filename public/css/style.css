@@ -99,15 +99,7 @@ body{
         transform: scale(1.0) translateY(2%);
     }
 }
-/*Sizes of columns on middle view*/
-@media (max-width: 768px){
-    .container-fluid .offset-md-3 {
-        margin-left: 15%;
-    }
-    .container-fluid .col-md-3 {
-        width: 32%;
-    }
-}
+
 /*ABOUT PAGE*/
 .about-container{
     margin: 3% auto;
