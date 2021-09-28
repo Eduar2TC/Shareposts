@@ -1,0 +1,9 @@
+#redirect file no found to -> http://localhost/Shareposts/login/
+<IfModule mod_rewrite.c>
+    Options -Multiviews
+    RewriteEngine On 
+    RewriteBase /Shareposts/public
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+</IfModule>
