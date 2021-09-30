@@ -11,10 +11,6 @@ function returnJsonHttpResponse($data = null, $httpStatus = 200 ){
     // Set the content type to JSON and charset 
     // (charset can be set to something else)
     header("Content-type: application/json; charset=utf-8");
-    
-    header('Access-Control-Allow-Origin: *');
-    header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 
     // Set your HTTP response code, 2xx = SUCCESS, 
     // anything else will be error, refer to HTTP documentation
