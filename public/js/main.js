@@ -80,9 +80,10 @@ window.addEventListener( 'load', function () {
         fetch('http://localhost/Shareposts/posts/'+ userClick + '/' + post, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
             },
-            mode: 'cors',
+            mode: 'no-cors',
         }).then(function (response) {
             if (response.ok) {
                 return response.json();
