@@ -83,7 +83,6 @@ window.addEventListener( 'load', function () {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
             },
-            mode: 'no-cors',
         }).then(function (response) {
             if (response.ok) {
                 return response.json();
