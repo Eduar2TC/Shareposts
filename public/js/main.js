@@ -82,7 +82,7 @@ window.addEventListener( 'load', function () {
             headers: {
                 'Content-Type': 'application/json'
             },
-            mode: 'no-cors',
+            mode: 'cors',
         }).then(function (response) {
             if (response.ok) {
                 return response.json();
