@@ -77,7 +77,7 @@ window.addEventListener( 'load', function () {
 
     function getDataRatingPost( userClick ){
 
-        fetch('http://localhost/Shareposts/posts/'+ userClick + '/' + post, {
+        fetch('https://myshareposts.herokuapp.com/posts/'+ userClick + '/' + post, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
