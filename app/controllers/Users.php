@@ -75,6 +75,7 @@
                             font-size: 0.95rem;
                         }
                     </style>';
+                $data['link-active'] = 'register'; //add link active
                     //Load view with errors
                     $this->view( 'users/register', $data);
                 }
@@ -90,7 +91,8 @@
                     'name_error' => '',
                     'email_error' => '',
                     'password_error' => '',
-                    'confirm_password_error' => '',  
+                    'confirm_password_error' => '',
+                    'link-active' => 'register' //add link active
                 ];
                 //Load view
                 $this->view('users/register', $data);
@@ -107,7 +109,8 @@
                     'password' => trim($_POST['password']),
                     'email_error' => '',
                     'password_error' => '',
-                    'styles' => ''
+                    'styles' => '',
+                    'link-active' => 'login' //add link active
                 ];
                 //Validate Email
                 if( empty($data['email']) ) {
@@ -167,7 +170,8 @@
                     'email' => '',
                     'password' => '',
                     'email_error' => '',
-                    'password_error' => ''
+                    'password_error' => '',
+                    'link-active' => 'login' //add link active
                 ];
             }
 
@@ -180,17 +184,19 @@
             $_SESSION['user_id'] = $user->id;
             $_SESSION['user_email'] = $user->email;
             $_SESSION['user_name'] = $user->name;
+            $_SESSION['user_img'] = $user->profile_path_img;
             redirect('posts');
         }
         public function logout(){
             unset($_SESSION['user_id']);
             unset($_SESSION['user_email']);
             unset($_SESSION['user_name']);
+            unset($_SESSION['user_img']);
             session_destroy();
             redirect('users/login');
         }
-        public function profile( $id ){
 
+        public function profile( $id ){
             $this->userModel = $this->model('User');
             $dataUser = $this->userModel->getUserById($id);
             $data = [

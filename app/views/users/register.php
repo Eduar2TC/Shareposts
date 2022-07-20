@@ -1,10 +1,10 @@
 <?php require_once APP_ROOT . '/views/inc/header.php'; ?>
-<main class="d-flex align-items-center min-vh-100 py-2 py-md-0">
-    <div class="row container-fluid mx-auto mt-4 mb-3">
-        <div class="col-md-4 offset-md-2 d-flex justify-content-end px-0 img-container">
+<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="row g-0 container-fluid">
+        <div class="col-md-4 offset-md-3 d-flex justify-content-end px-0 me-0 img-container">
             <img class="img-fluid align-self-end shadow" src="<?php echo URL_ROOT; ?>/img/backgrond-register.jpg" alt="" srcset="">
         </div>
-        <div class="col-md-4 ps-0">
+        <div class="col-md-3 ps-0">
 
             <div class="card card-body bg-light p-3 shadow-lg">
                 <h2 class="text-center text-primary fira">Create an Accont</h2>

@@ -1,5 +1,6 @@
 #redirect file no found to -> http://localhost/Shareposts/login/
 <IfModule mod_rewrite.c>
+
     Options -Multiviews
     RewriteEngine On 
     RewriteBase /Shareposts/public

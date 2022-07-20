@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="<?php echo URL_ROOT; ?>">
-            <img src="<?php echo URL_ROOT . '/img/logo.svg' ?>" width="30" height="30" alt=" logo" class="d-inline-block align-text-top">
-            Sharepost Web
+            <img src="<?php echo URL_ROOT . '/img/logo.svg' ?>" width="30" height="30" alt="logo" class="d-inline-block align-text-top">
+            Shareposts
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,7 +18,7 @@
                 </ul>
                 <div class="navbar-nav profile dropdown">
                     <div class="photo">
-                        <img class="user-profile-img" src="<?php echo URL_ROOT . '/app/views/users/img/' . $_SESSION['user_name'] . '.png'; ?>">
+                        <img class="user-profile-img" src="<?php echo ( $_SESSION['user_img'] ) != '/app/views/users/img/' ? URL_ROOT . $_SESSION['user_img'] : URL_ROOT . '/app/views/users/img/' . $_SESSION['user_name'] . '.png'; ?>">
                     </div>
                     <a href="<?php echo URL_ROOT . '/users/profile/' . $_SESSION['user_id']; ?> " class="nav-link d-md-none">
                         <?php echo $_SESSION['user_name'] ?>
@@ -40,17 +40,17 @@
             <?php else : ?>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="<?php echo URL_ROOT; ?>">Home</a>
+                        <a class="nav-link <?php echo isset($data['link-active']) && $data['link-active'] == 'home' ? 'active' : '';  ?> " aria-current="page" href="<?php echo URL_ROOT; ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URL_ROOT; ?>/pages/about">About</a>
+                        <a class="nav-link <?php echo isset($data['link-active']) && $data['link-active'] == 'about' ? 'active' : '';  ?> " href="<?php echo URL_ROOT; ?>/pages/about">About</a>
                     </li>
                 </ul>
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="<?php echo URL_ROOT; ?>/users/register">Register</a>
+                    <a class="nav-link <?php echo isset($data['link-active']) && $data['link-active'] == 'register' ? 'active' : '';  ?> " aria-current="page" href="<?php echo URL_ROOT; ?>/users/register">Register</a>
                 </div>
                 <div class="navbar-nav">
-                    <a class="nav-link" href="<?php echo URL_ROOT; ?>/users/login">Login</a>
+                    <a class="nav-link <?php echo isset($data['link-active']) && $data['link-active'] == 'login' ? 'active' : '';  ?>  " href="<?php echo URL_ROOT; ?>/users/login">Login</a>
                 </div>
             <?php endif; ?>
             <!--<form class="d-flex">

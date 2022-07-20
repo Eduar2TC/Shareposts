@@ -9,7 +9,7 @@
                 <div class="col col-md-auto p-2 d-flex justify-content-center">
                     <div class="img-profile-external-container">
                         <div class="img-profile-internal-container">
-                            <img src="<?php echo URL_ROOT . '/app/views/users/img/' . $_SESSION['user_name'] . '.png'; ?>" alt="" srcset="">
+                            <img src=" <?php echo ( $_SESSION['user_img'] ) != '/app/views/users/img/' ? URL_ROOT . $_SESSION['user_img'] : URL_ROOT . '/app/views/users/img/' . $_SESSION['user_name'] . '.png'; ?> " alt="profile image">
                         </div>
                     </div>
                 </div>
@@ -17,11 +17,11 @@
                     <h2 class="mb-0"><?php echo $_SESSION['user_name']; ?></h2>
                     <span class="job-title"><?php echo $data['data_user']->job; ?></span>
                     <p><?php echo $data['data_user']->about_me; ?></p>
-                    <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $data['data_user']->user_id ) : ?>
-                          <a href="#" class="btn btn-success">Edit Profile</a>
-                          <?php else : ?>
-                            <a href="#" class="btn btn-success">View Profile</a>
-                        <?php endif; ?>
+                    <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $data['data_user']->user_id) : ?>
+                        <a href="#" class="btn btn-success">Edit Profile</a>
+                    <?php else : ?>
+                        <a href="#" class="btn btn-success">View Profile</a>
+                    <?php endif; ?>
                 </div>
                 <div class="col col-md-3 col-lg-3 bg-light d-flex justify-content-center">
                     <div class="d-grid gap-5">

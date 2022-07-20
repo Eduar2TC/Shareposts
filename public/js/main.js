@@ -118,6 +118,7 @@ window.addEventListener( 'load', function () {
         }
 
     }
+
 });
 
 
@@ -125,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Toast messages
     new bootstrap.Toast(document.querySelector('.toast')).show();
 }, false);
+
 
 /*const formulario = document.querySelector('.formulary');
 formulario.addEventListener('submit', function (event) {

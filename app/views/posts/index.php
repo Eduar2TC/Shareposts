@@ -18,7 +18,7 @@
         <div class="tape"></div>
         <h4 class="card-title"><?php echo $post->title; ?></h4>
         <div class="bg-light p-2 mb-3 rounded-3">
-            <p class="mb-0 fst-italic">Write by</b> <b><img class="user-profile-img" src="<?php echo URL_ROOT . $post->userProfileImage . $post->name; ?>.png"> <?php echo $post->name; ?></b> on <?php echo $post->postCreated; ?></p>
+            <p class="mb-0 fst-italic">Write by</b> <b><img class="user-profile-img" src="<?php echo ( $post->userProfileImage == '/app/views/users/img/' ) ? URL_ROOT . $post->userProfileImage . $post->name .'.png' : URL_ROOT . $post->userProfileImage  ?> " > <?php echo $post->name; ?></b> on <?php echo $post->postCreated; ?></p>
         </div>
         <p class="card-text p-2 bg-light rounded rounded-2 fira"><?php echo nl2br($post->body); ?></p>
         <a href="<?php echo URL_ROOT ?>/posts/show/<?php echo $post->postId ?>" role="button" class="col-md-2 btn btn-outline-dark btn-sm">More info</a>

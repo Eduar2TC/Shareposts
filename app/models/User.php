@@ -6,11 +6,12 @@
     }
     //Register user
     public function register( $data ){
-        $this->db->query( 'INSERT INTO users(name, email, password) VALUES( :name, :email, :password )' );
+        $this->db->query('INSERT INTO users(name, email, password, profile_path_img ) VALUES( :name, :email, :password, :profile_path_img )' );
         //bind values
         $this->db->bind(':name', $data['name']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':password', $data['password']);
+        $this->db->bind( ':profile_path_img', make_avatar($data['name']) );
         //Execute
         if( $this->db->execute() == true ){
             return true;

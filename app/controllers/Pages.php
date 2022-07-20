@@ -14,7 +14,8 @@
                 $data = [
                     'title' => 'Welcome',
                     'description' => 'This is a description of post for MVC proyect',
-                    'posts' => $posts
+                    'posts' => $posts,
+                    'link-active' => 'home'
                 ];
                 $this->view('pages/index', $data);
             }
@@ -22,7 +23,8 @@
         public function about( ){
         $data = [
             'title' => 'About',
-            'description' => 'App to share post with other users'
+            'description' => 'App to share post with other users',
+            'link-active' => 'about'
         ];
             $this->view( 'pages/about', $data);
         }
