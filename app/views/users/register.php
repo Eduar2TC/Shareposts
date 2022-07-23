@@ -1,7 +1,7 @@
 <?php require_once APP_ROOT . '/views/inc/header.php'; ?>
 <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
-    <div class="row g-0 container-fluid">
-        <div class="col-md-4 offset-md-3 d-flex justify-content-end px-0 me-0 img-container">
+    <div class="row g-0 container-fluid justify-content-center">
+        <div class="col-md-4 d-flex px-0 me-0 img-container">
             <img class="img-fluid align-self-end shadow" src="<?php echo URL_ROOT; ?>/img/backgrond-register.jpg" alt="" srcset="">
         </div>
         <div class="col-md-3 ps-0">

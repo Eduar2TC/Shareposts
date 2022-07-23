@@ -1,9 +1,12 @@
 <?php require_once APP_ROOT . '/views/inc/header.php'; ?>
 
 <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
-    <div class="row g-0 container-fluid">
-        <div class="col-md-4 offset-md-3 d-flex justify-content-end px-0 me-0 img-container">
-            <img class="img-fluid align-self-end shadow" src="<?php echo URL_ROOT; ?>/img/background-login.jpg" alt="" srcset="">
+    <div class="row g-0 container-fluid justify-content-center">
+        <div class="col-md-4 px-0 me-0 img-container">
+            <img class="img-fluid align-self-end shadow img-0" src="<?php echo URL_ROOT; ?>/img/login/background-login-0.jpg" alt="" srcset="">
+            <img class="img-fluid align-self-end shadow img-1" src="<?php echo URL_ROOT; ?>/img/login/background-login-1.jpg" alt="" srcset="">
+            <img class="img-fluid align-self-end shadow img-2" src="<?php echo URL_ROOT; ?>/img/login/background-login-2.jpg" alt="" srcset="">
+            <img class="img-fluid align-self-end shadow img-3" src="<?php echo URL_ROOT; ?>/img/login/background-login-3.jpg" alt="" srcset="">
         </div>
         <div class="col-md-3 ps-0">
 

@@ -45,23 +45,82 @@ body{
 /*Login*/
 .img-container{
     overflow: hidden;
-    width: fit-content !important;
+    width: fit-content;
+    position: relative;
     border-top-left-radius: 13px;
     border-bottom-left-radius: 13px;
     box-shadow: 0 0.5rem 1rem rgba(0, 0,0, 0.38);
 }
 .img-container img {
+    position: absolute;
     height: -webkit-fill-available;
-    width: 300px;
+    width: 100%;
     border-top-left-radius: 13px;
     border-bottom-left-radius: 13px;
     object-fit: cover;
+    object-position: 70% 50%;
     transition: transform .5s ease; /*dsplazamiento*/
 }
 .img-container:hover img {
     transform: scale(1.0) translateX(2%);
     overflow: hidden;
 }
+
+.img-container .img-0 {
+    animation-name: animFadeOut;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    animation-delay: 9s;
+    animation-timing-function: ease-out;
+}
+
+.img-container .img-1 {
+    animation-name: animFadeOut;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    animation-delay: 6s;
+    animation-timing-function: ease-out;
+}
+
+.img-container .img-2 {
+    animation-name: animFadeOut;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    animation-delay: 3s;
+    animation-timing-function: ease-out;
+}
+
+.img-container .img-3 {
+    animation-name: animFadeOut;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+}
+
+/*Transition*/
+@keyframes animFadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    18.75% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    93.75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 /*.container-fluid:hover > .img-container img{
     transform: scale(1.0) translateX(5%);
 }*/
@@ -83,16 +142,18 @@ body{
 @media only screen and (max-width: 767.98px){
 
     .img-container{
+        height: 14rem;
         border-top-right-radius: 11px;
         border-bottom-left-radius: 0px;
         margin-right: 12px;
         margin-bottom: -80px;
     }
     .img-container img {
+        position: absolute;
         height: -webkit-fill-available;
+        width: 100%;
         transition: transform .5s ease; /*dsplazamiento*/
         border-top-right-radius: 11px;
-        width: 100%;
         object-fit: cover;
     }
     .img-container:hover img {
