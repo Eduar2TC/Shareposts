@@ -72,4 +72,8 @@ class Database{
     public function rowCount(){
         return $this->statement->rowCount();
     }
+    //Get row count in SELECT PDO
+    public function rowCountAlter(){
+        return $this->statement->fetchColumn();
+    }
 }

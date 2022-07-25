@@ -8,13 +8,34 @@
             $this->postModel = $this->model('Post');
             $this->userModel = $this->model('User');
         }
-        public function index(){
-            //Get Posts
-            $posts = $this->postModel->getPosts();
+        // public function index(){
+        //     //Get Posts
+        //     $posts = $this->postModel->getPosts();
+        //     $data = [
+        //         'posts' => $posts
+        //     ];
+        //     $this->view('posts/index', $data);
+        // }
+        //Limit number of posts showed on the main page
+        public function index( $page_num = 1 ){
+            $limit = 5;
+            $total_rows = $this->postModel->countAllPost();
+            $initial_page = ($page_num - 1) * $limit;
+            $total_pages = ceil( $total_rows / $limit );
+
+            if( isset( $page_num ) ){
+
+            $posts = $this->postModel->getPostForRangueLimited($initial_page, $limit);
             $data = [
-                'posts' => $posts
+                'posts' => $posts,
+                'page_num' => $page_num,
+                'total_pages' => $total_pages
+
             ];
             $this->view('posts/index', $data);
+
+            }
+
         }
         public function add(){
             if( $_SERVER['REQUEST_METHOD'] == 'POST' ){

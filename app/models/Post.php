@@ -6,6 +6,7 @@ class Post{
     public function __construct(){
         $this->db = new Database;
     }
+    //Get all posts
     public function getPosts(){
         $this->db->query('SELECT *,
                             posts.id AS postId,
@@ -19,6 +20,24 @@ class Post{
                             ORDER BY posts.created_at DESC
                             '
         );
+        $results = $this->db->resultSet();
+        return $results;
+    }
+    public function getPostForRangueLimited($initLimit, $endLimit ){
+        $this->db->query('SELECT *,
+                            posts.id AS postId,
+                            users.id AS usersId,
+                            users.profile_path_img as userProfileImage,
+                            posts.created_at as postCreated,
+                            users.created_at as userCreated
+                            FROM posts 
+                            INNER JOIN users
+                            ON posts.user_id = users.id
+                            ORDER BY posts.created_at DESC LIMIT :init, :end
+                            '
+        );
+        $this->db->bind(':init', $initLimit);
+        $this->db->bind(':end', $endLimit);
         $results = $this->db->resultSet();
         return $results;
     }
@@ -89,7 +108,12 @@ class Post{
             return false;
         }
     }
-
+    //Count all posts
+    public function countAllPost(){
+        $this->db->query('SELECT COUNT(*) AS num_posts FROM posts');
+        $this->db->execute();
+        return $this->db->rowCountAlter();
+    }
     //Count post by id +delete+
     public function countPostsById( $id ){
         $this->db->query( 'SELECT COUNT(*) AS num_posts FROM posts WHERE user_id = :id ' );
