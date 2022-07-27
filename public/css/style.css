@@ -37,6 +37,10 @@ body{
 .bg-linear-gradient{
     background-image: linear-gradient( to right, rgba(20, 71, 182, 0.2) , #B7D0F1 );
 }
+.avatar img{
+    padding: 0.25rem;
+    border-radius: 50%;
+}
 /*LOGIN PAGE*/
 /*Titles and text*/
 .fira{
@@ -58,7 +62,7 @@ body{
     border-top-left-radius: 13px;
     border-bottom-left-radius: 13px;
     object-fit: cover;
-    object-position: 70% 50%;
+    object-position: 25% 50%;
     transition: transform .5s ease; /*dsplazamiento*/
 }
 .img-container:hover img {
@@ -165,82 +169,19 @@ body{
 
 }
 /*ABOUT PAGE*/
-.about-container{
-    margin: 3% auto;
-    padding: 10%;
-    background-color: azure;
-    border-radius: 3px;
-    width: 80%;
-    height: auto;
-    /*waves data*/
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-image: linear-gradient(to top, #5c9eeb 0%, azure 100%);
-    overflow: hidden;
+.about-me img{
+    border-radius: 50%;
+    height: 10rem;
 }
-.about-img{
-    z-index: 1;
-    float: left;
-    width: 20%;
+.github-avatar-container {
+    border-radius: 50%;
+    border: 0.5rem solid rgb(230, 231, 231);
 }
-
-.about-content{
-    z-index: 1;
-    text-align: right;
-    width: 80%;
-}
-
-.about-img img{
-    object-fit: cover;
-    height: 260px;
-    width: 260px;
-    border: solid 0.25rem #f0ede4;
+.gifs-container img{
+    padding: 1rem;
+    height: 10rem;
     border-radius: 50%;
 }
-@media only screen and (max-width: 768px){
-    .about-img img{
-        height: 180px;
-        width: 180px;
-    }
-    .about-content{
-        text-align: right;
-    }
-    .about-content h5{
-        font-size: 1rem;
-    }
-}
-@media only screen and (max-width: 425px){
-    .about-container{
-        flex-direction: column;
-    }
-    .about-img{
-        width: initial;
-    }
-    .about-content{
-        text-align: center;
-    }
-}
-/*Waves data*/
-.wave {
-  width: 1000px;
-  height: 1025px;
-  position: absolute;
-  top: -25%;
-  left: 50%;
-  margin-left: -500px;
-  margin-top: -500px;
-  border-radius: 35%;
-  background: rgba(240, 255, 255, .95);
-  animation: wave 15s infinite linear;
-}
-
-@keyframes wave {
-  from { transform: rotate(0deg);}
-  from { transform: rotate(360deg);}
-}
-
 /*POSTS PAGE*/
 .user-profile-img{
     height: 40px;

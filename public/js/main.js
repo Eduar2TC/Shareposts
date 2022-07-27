@@ -11,7 +11,7 @@ window.addEventListener( 'load', function () {
 
     const post = window.location.pathname.split("/").pop();
     
-
+    //Likes and dislikes posts
     iconLike.addEventListener('click', function( event ){
         event.preventDefault();
         let attribute = classLike.getAttribute('data-prefix');
@@ -121,11 +121,31 @@ window.addEventListener( 'load', function () {
 
 });
 
-
 document.addEventListener("DOMContentLoaded", function() {
     // Toast messages
     new bootstrap.Toast(document.querySelector('.toast')).show();
 }, false);
+
+/* API Github */
+
+fetch('https://api.github.com/users/Eduar2tc').then( 
+    response => response.json() 
+    ).catch( 
+        error => console.log(error) 
+    ).then( data => {
+        let html = '';
+        let container = document.querySelector('.about-me');
+         html += `
+            <div class="github-avatar-container"><img class = "img-fluid" src="${data.avatar_url}" alt="profile"></div>
+                 <p class="display-4 text-light">${data.login}</p>
+                <p class="display-5 fs-2 text-light">${data.location}</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a target="_blank" href="${data.html_url}" class="btn btn btn-outline-light me-md-2" type="button"><i class="fa-brands fa-github me-1"></i>Github</a>
+                    <a target="_blank" href="linkedin.com/in/eduardo-tolentino-51330920a/" class="btn btn btn-outline-light" type="button"><i class="fa-brands fa-linkedin me-1"></i>Linkedin</a>
+                </div>
+         `;
+         container.innerHTML = html;
+    });
 
 
 /*const formulario = document.querySelector('.formulary');

@@ -17,7 +17,7 @@
                     'posts' => $posts,
                     'link-active' => 'home'
                 ];
-                //$this->view('pages/index', $data);
+                $this->view('pages/index', $data);
             }
         }
         public function about( ){
